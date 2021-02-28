@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   margin: 60px;
+    position: relative;
+   /*left: 20%; */
+  }
+
+div input{
+    font-size: 12px;
+    width: 35%;
+    padding: 4px;
+    text-align: center;
+}
+
+#customer-info{
+    height: 210px;
+    width: 680px;
+    border: 1px solid black;
+    padding: 20px 60px;
+} 
+
+#books{
+    height: 95px;
+    width: 680px;
+    border: 1px solid black;
+    padding: 20px 30px;
+} 
+
+.cus-info{
+    position: relative;
+    top: 8px;
+    left: 18px;
+    background-color: white;
+}
+
+.boo{
+    position: relative;
+    top:8px;
+    left:18px;
+    background-color: white;
+}
+
+
+#quantity_e{
+    position: relative;
+    left: 280px;
+}
+
+#telephone_e{
+    position: relative;
+    left: 100px;
+}
+
+#name_e{
+    position: relative;
+    left: 60px;
+}
+
+#email_e{
+    position: relative;
+    left: 120px;
+}
+
+p{
+    color:red ;
+}
+
+/* #formsubmit{
+    position: relative;
+    left:25%;
+} */
+
+
+
+

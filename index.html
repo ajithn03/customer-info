@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Customer Info</title>
+
+
+    <script>
+    function submitform (){
+   
+    let name=document.forms["info"]['name'].value
+    let telephone=document.forms["info"]['telephone'].value
+    let email=document.forms["info"]['Email'].value
+    let quantity=document.forms["info"]['quantity'].value
+
+
+
+    let count =0;
+    if(name.length<3  | name.length>=30){
+        document.querySelector('#name_e').innerHTML = "Should contain only character of minimum length 3 and maximum of 30"
+        count = count+1
+      
+    }
+    if(!(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))){
+        document.querySelector('#email_e').innerHTML = "It should be in email format" 
+        count=count+1
+     
+    }
+    if( telephone.length !== 10 ){
+        document.querySelector('#telephone_e').innerHTML = "Phone number should be of 10 digit"
+        count=count+1
+     
+    }
+    if( quantity>5){
+        document.querySelector('#quantity_e').innerHTML = "choose range between 1 to 5"
+        count=count+1
+     
+    }
+    if(count>0){
+        return false
+    }
+    return true
+    
+
+}
+    </script>
+</head>
+<body>
+    <form name="info" onsubmit="return submitform()" action = "home.html" method="POST">
+        
+        <span class="cus-info">Customer Info </span>
+
+        <div id=customer-info>
+        <label for="Name">Name: </label>
+        <input type="text" name="Name" placeholder="Enter your name" id="name" required>
+        <p id="name_e"></p>
+        <br>
+
+        <label for="Telephone">Telephone: </label>
+        <input type="text" name="Telephone" placeholder="Pattern 0123456789" id="telephone" required>
+        <p id="telephone_e"></p>
+        <br>
+
+        <label for="Email">Email address: </label>
+        <input type="text" name="Email" placeholder="Enter your email address" id="email" required>
+        <p id="email_e"></p>
+        <br>
+        </div>
+
+        <span class="boo">Books</span>
+         
+        <div id="books">
+            
+        <select id="book">
+            <option value="Angular">Angular</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="javascript">javascript</option>
+            <option value="react">react</option>
+          </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <label for="Quantity">Quantity (Maximum 5) </label> 
+        <input type="text" name="Quantity" placeholder="Choose 1 - 5" id="quantity" required>
+        <p id="quantity_e"></p>
+        </div>
+
+
+        <br>
+        <input id="formsubmit" type="submit" name="Submit" value="Submit">
+
+    </form>
+
+</body>
+</html>
+
